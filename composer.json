@@ -1,0 +1,23 @@
+{
+    "name": "arhone/converter",
+    "description": "Преобразует одно в другое (PHP 7)",
+    "homepage": "https://github.com/arhone/converter",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Алексей Арх",
+            "email": "info@arh.one"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "arhone\\converter\\": "source/"
+        },
+        "classmap": ["source/"]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.0"
+    }
+}
