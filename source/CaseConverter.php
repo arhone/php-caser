@@ -14,7 +14,6 @@ class CaseConverter implements CaseConverterInterface {
      * @var array
      */
     protected $primitive = [];
-    protected $case      = null;
 
     /**
      * CaseConverter constructor.
@@ -27,11 +26,22 @@ class CaseConverter implements CaseConverterInterface {
      * camelCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function camel (string $string = null) : CaseConverterInterface {
+    public function camel (string $string = null) {
 
+        if (!empty($string)) {
 
+            $string = implode('.', preg_split('#((?<=.)(?=[[:upper:]][[:lower:]])|(?<=[[:lower:]])(?=[[:upper:]]))#u', $string));
+            $this->primitive = explode('.', mb_strtolower($string));
+            return $this;
+
+        } else {
+
+            $string = str_replace(' ', '', $this->title());
+            return mb_strtolower(mb_substr($string, 0, 1)) . mb_substr($string, 1);;
+
+        }
 
     }
 
@@ -39,9 +49,11 @@ class CaseConverter implements CaseConverterInterface {
      * lowerCamelCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function lowerCamel (string $string = null) : CaseConverterInterface {
+    public function lowerCamel (string $string = null) {
+
+        return $this->camel((string)$string);
 
     }
 
@@ -49,21 +61,32 @@ class CaseConverter implements CaseConverterInterface {
      * snake_case
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function snake (string $string = null) : CaseConverterInterface {
+    public function snake (string $string = null) {
 
         if (!empty($string)) {
 
-            $this->primitive = explode('_', $string);
+            $this->primitive = explode('_', mb_strtolower($string));
+            return $this;
 
         } else {
 
-            $this->case = implode('_', $this->primitive);
+            return implode('_', $this->primitive);
 
         }
 
-        return $this;
+    }
+
+    /**
+     * under_score
+     *
+     * @param string|null $string
+     * @return CaseConverterInterface|string
+     */
+    public function underScore (string $string = null) {
+
+        return $this->snake((string)$string);
 
     }
 
@@ -71,10 +94,20 @@ class CaseConverter implements CaseConverterInterface {
      * SCREAMING_SNAKE_CASE
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function screamingSnake (string $string = null): CaseConverterInterface {
+    public function screamingSnake (string $string = null) {
 
+        if (!empty($string)) {
+
+            $this->primitive = explode('_', mb_strtolower($string));
+            return $this;
+
+        } else {
+
+            return mb_strtoupper(implode('_', $this->primitive));
+
+        }
 
     }
 
@@ -82,9 +115,20 @@ class CaseConverter implements CaseConverterInterface {
      * PascalCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function pascal (string $string = null) : CaseConverterInterface {
+    public function pascal (string $string = null) {
+
+        if (!empty($string)) {
+
+            $this->primitive = explode('_', mb_strtolower($string));
+            return $this;
+
+        } else {
+
+            return str_replace(' ', '', $this->title());
+
+        }
 
     }
 
@@ -92,9 +136,11 @@ class CaseConverter implements CaseConverterInterface {
      * UpperCamelCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function upperCamel (string $string = null) : CaseConverterInterface {
+    public function upperCamel (string $string = null) {
+
+        return $this->pascal((string)$string);
 
     }
 
@@ -102,21 +148,20 @@ class CaseConverter implements CaseConverterInterface {
      * kebab-case
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string|string
      */
-    public function kebab (string $string = null) : CaseConverterInterface {
+    public function kebab (string $string = null) {
 
         if (!empty($string)) {
 
-            $this->primitive = explode('-', $string);
-
+            $this->primitive = explode('-', mb_strtolower($string));
+            return $this;
+            
         } else {
 
-            $this->case = implode('-', $this->primitive);
+            return implode('-', $this->primitive);
 
         }
-
-        return $this;
 
     }
 
@@ -124,9 +169,20 @@ class CaseConverter implements CaseConverterInterface {
      * Train-Case
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function train (string $string = null) : CaseConverterInterface {
+    public function train (string $string = null) {
+
+        if (!empty($string)) {
+
+            $this->primitive = explode('-', mb_strtolower($string));
+            return $this;
+
+        } else {
+
+            return str_replace(' ', '-', $this->title());
+
+        }
 
     }
 
@@ -134,18 +190,20 @@ class CaseConverter implements CaseConverterInterface {
      * Title Case
      *
      * @param string|null $string
-     * @return CaseConverterInterface
+     * @return CaseConverterInterface|string
      */
-    public function title (string $string = null) : CaseConverterInterface {
+    public function title (string $string = null) {
 
-    }
+        if (!empty($string)) {
 
-    /**
-     * @return string
-     */
-    public function __toString () : string {
+            $this->primitive = explode(' ', mb_strtolower($string));
+            return $this;
 
-        return (string)$this->case;
+        } else {
+
+            return mb_convert_case(implode(' ', $this->primitive), MB_CASE_TITLE, 'UTF-8');
+
+        }
 
     }
 
