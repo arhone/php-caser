@@ -5,7 +5,7 @@
 Преобразует одни стили написания в другие
 
 ```php
-$CaseConverter = new \arhone\converter\CaseConverter();
+$CaseConverter = new \arhone\converting\CaseConverter();
 
 echo $CaseConverter->camel('верблюжийСтиль')->snake(); // верблюжий_стиль
 echo $CaseConverter->title('Всё С Больших Букв')->train(); // Всё-С-Больших-Букв
