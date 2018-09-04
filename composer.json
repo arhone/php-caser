@@ -1,7 +1,7 @@
 {
-    "name": "arhone/converter",
-    "description": "Преобразует одно в другое (PHP 7)",
-    "homepage": "https://github.com/arhone/converter",
+    "name": "arhone/converting",
+    "description": "Библиотека преобразования одного в другое (PHP 7)",
+    "homepage": "https://github.com/arhone/converting",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,12 +12,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "arhone\\converter\\": "source/"
+            "arhone\\converting\\": "source/"
         },
         "classmap": ["source/"]
     },
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.0"
+        "php": ">=7.0"
     }
 }

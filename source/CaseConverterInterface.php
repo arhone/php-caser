@@ -1,11 +1,12 @@
 <?php declare(strict_types = 1);
-namespace arhone\converter;
+
+namespace arhone\converting;
 
 /**
  * Преобразователь стилей написания
  *
  * Interface CaseConverterInterface
- * @package arhone\converter
+ * @package arhone\converting
  * @author Алексей Арх <info@arh.one>
  */
 interface CaseConverterInterface {
