@@ -27,9 +27,9 @@ class CaseConverter implements CaseConverterInterface {
      * camelCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return $this|CaseConverterInterface|string
      */
-    public function camel (string $string = null) {
+    public function camel (?string $string = null) {
 
         if (!empty($string)) {
 
@@ -52,7 +52,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function lowerCamel (string $string = null) {
+    public function lowerCamel (?string $string = null) {
 
         return $this->camel((string)$string);
 
@@ -64,7 +64,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function snake (string $string = null) {
+    public function snake (?string $string = null) {
 
         if (!empty($string)) {
 
@@ -85,7 +85,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function underScore (string $string = null) {
+    public function underScore (?string $string = null) {
 
         return $this->snake((string)$string);
 
@@ -97,7 +97,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function screamingSnake (string $string = null) {
+    public function screamingSnake (?string $string = null) {
 
         if (!empty($string)) {
 
@@ -118,7 +118,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function pascal (string $string = null) {
+    public function pascal (?string $string = null) {
 
         if (!empty($string)) {
 
@@ -139,7 +139,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function upperCamel (string $string = null) {
+    public function upperCamel (?string $string = null) {
 
         return $this->pascal((string)$string);
 
@@ -151,7 +151,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string|string
      */
-    public function kebab (string $string = null) {
+    public function kebab (?string $string = null) {
 
         if (!empty($string)) {
 
@@ -172,7 +172,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function train (string $string = null) {
+    public function train (?string $string = null) {
 
         if (!empty($string)) {
 
@@ -193,7 +193,7 @@ class CaseConverter implements CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function title (string $string = null) {
+    public function title (?string $string = null) {
 
         if (!empty($string)) {
 

@@ -22,7 +22,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function camel (string $string = null);
+    public function camel (?string $string = null);
 
     /**
      * lowerCamelCase
@@ -30,7 +30,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function lowerCamel (string $string = null);
+    public function lowerCamel (?string $string = null);
 
     /**
      * snake_case
@@ -38,7 +38,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function snake (string $string = null);
+    public function snake (?string $string = null);
 
     /**
      * under_score
@@ -46,7 +46,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function underScore (string $string = null);
+    public function underScore (?string $string = null);
 
     /**
      * SCREAMING_SNAKE_CASE
@@ -54,7 +54,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function screamingSnake (string $string = null);
+    public function screamingSnake (?string $string = null);
 
     /**
      * PascalCase
@@ -62,7 +62,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function pascal (string $string = null);
+    public function pascal (?string $string = null);
 
     /**
      * UpperCamelCase
@@ -70,7 +70,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function upperCamel (string $string = null);
+    public function upperCamel (?string $string = null);
 
     /**
      * kebab-case
@@ -78,7 +78,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function kebab (string $string = null);
+    public function kebab (?string $string = null);
 
     /**
      * Train-Case
@@ -86,7 +86,7 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function train (string $string = null);
+    public function train (?string $string = null);
 
     /**
      * Title Case
@@ -94,6 +94,6 @@ interface CaseConverterInterface {
      * @param string|null $string
      * @return CaseConverterInterface|string
      */
-    public function title (string $string = null);
+    public function title (?string $string = null);
 
 }
