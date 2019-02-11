@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace arhone\converting\caserr;
+namespace arhone\converting\caser;
 
 /**
  * Преобразователь стилей написания
