@@ -5,7 +5,7 @@ namespace arhone\converting;
 /**
  * Преобразователь стилей написания
  *
- * Interface CaseConverter
+ * Class CaseConverter
  * @package arhone\converting
  * @author Алексей Арх <info@arh.one>
  */
