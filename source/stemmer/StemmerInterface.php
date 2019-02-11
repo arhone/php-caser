@@ -15,6 +15,6 @@ interface StemmerInterface {
      * @param string $text
      * @return string
      */
-    public function stem (string $text) : string;
+    public function convert (string $text) : string;
 
 }

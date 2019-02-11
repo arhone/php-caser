@@ -5,12 +5,12 @@
 Преобразует одни стили написания в другие
 
 ```php
-$caseConverter = new \arhone\converting\CaseConverter();
+$caser = new \arhone\converting\caser\Caser();
 
-echo $caseConverter->camel('верблюжийСтиль')->snake(); // верблюжий_стиль
-echo $caseConverter->title('Всё С Больших Букв')->train(); // Всё-С-Больших-Букв
-echo $caseConverter->kebab('проткнутые-шампуром-слова')->pascal(); // ПроткнутыеШампуромСлова
-echo $caseConverter->screamingSnake('ИМЯ_КОНСТАНТЫ')->pascal(); // ИмяКонстанты
+echo $caser->camel('верблюжийСтиль')->snake(); // верблюжий_стиль
+echo $caser->title('Всё С Больших Букв')->train(); // Всё-С-Больших-Букв
+echo $caser->kebab('проткнутые-шампуром-слова')->pascal(); // ПроткнутыеШампуромСлова
+echo $caser->screamingSnake('ИМЯ_КОНСТАНТЫ')->pascal(); // ИмяКонстанты
 ```
 
 ### Стеммер Портера (в разработке)
@@ -18,9 +18,9 @@ echo $caseConverter->screamingSnake('ИМЯ_КОНСТАНТЫ')->pascal(); // �
 
 
 ```php
-$stemmer = new \arhone\converting\stemmer\RussionStemmer();
+$stemmer = new \arhone\converting\stemmer\Stemmer();
 
-echo $stemmer->stem('матрёшка'); // матрешк
-echo $stemmer->stem('матрёшкой'); // матрешк
-echo $stemmer->stem('матрёшке');  // матрешк
+echo $stemmer->convert('матрёшка'); // матрешк
+echo $stemmer->convert('матрёшкой'); // матрешк
+echo $stemmer->convert('матрёшке');  // матрешк
 ```

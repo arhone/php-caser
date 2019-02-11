@@ -1,18 +1,18 @@
 <?php declare(strict_types = 1);
 
-namespace arhone\converting;
+namespace arhone\converting\caserr;
 
 /**
  * Преобразователь стилей написания
  *
- * Interface CaseConverterInterface
- * @package arhone\converting
+ * Interface CaserInterface
+ * @package arhone\converting\caser
  * @author Алексей Арх <info@arh.one>
  */
-interface CaseConverterInterface {
+interface CaserInterface {
 
     /**
-     * CaseConverterInterface constructor.
+     * CaserInterface constructor.
      */
     public function __construct ();
 
@@ -20,7 +20,7 @@ interface CaseConverterInterface {
      * camelCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function camel (?string $string = null);
 
@@ -28,7 +28,7 @@ interface CaseConverterInterface {
      * lowerCamelCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function lowerCamel (?string $string = null);
 
@@ -36,7 +36,7 @@ interface CaseConverterInterface {
      * snake_case
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function snake (?string $string = null);
 
@@ -44,7 +44,7 @@ interface CaseConverterInterface {
      * under_score
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function underScore (?string $string = null);
 
@@ -52,7 +52,7 @@ interface CaseConverterInterface {
      * SCREAMING_SNAKE_CASE
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function screamingSnake (?string $string = null);
 
@@ -60,7 +60,7 @@ interface CaseConverterInterface {
      * PascalCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function pascal (?string $string = null);
 
@@ -68,7 +68,7 @@ interface CaseConverterInterface {
      * UpperCamelCase
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function upperCamel (?string $string = null);
 
@@ -76,7 +76,7 @@ interface CaseConverterInterface {
      * kebab-case
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function kebab (?string $string = null);
 
@@ -84,7 +84,7 @@ interface CaseConverterInterface {
      * Train-Case
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function train (?string $string = null);
 
@@ -92,7 +92,7 @@ interface CaseConverterInterface {
      * Title Case
      *
      * @param string|null $string
-     * @return CaseConverterInterface|string
+     * @return CaserInterface|string
      */
     public function title (?string $string = null);
 
