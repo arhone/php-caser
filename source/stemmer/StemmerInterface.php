@@ -13,8 +13,9 @@ interface StemmerInterface {
 
     /**
      * @param string $text
+     * @param string|null $language
      * @return string
      */
-    public function convert (string $text) : string;
+    public function convert (string $text, string $language = null) : string;
 
 }
