@@ -3,7 +3,9 @@
 
 
 ```php
-$stemmer = new \arhone\converting\stemmer\Stemmer();
+use arhone\converting\stemmer;
+
+$stemmer = new RussianStemmer();
 
 echo $stemmer->convert('матрёшка'); // матрешк
 echo $stemmer->convert('матрёшкой'); // матрешк
