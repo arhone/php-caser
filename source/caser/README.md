@@ -2,7 +2,9 @@
 Преобразует одни стили написания в другие
 
 ```php
-$caser = new \arhone\converting\caser\Caser();
+use arhone\converting\caser;
+
+$caser = new Caser();
 
 echo $caser->camel('верблюжийСтиль')->snake(); // верблюжий_стиль
 echo $caser->title('Всё С Больших Букв')->train(); // Всё-С-Больших-Букв
