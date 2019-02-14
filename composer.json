@@ -1,7 +1,7 @@
 {
-    "name": "arhone/converting",
-    "description": "Библиотека преобразования одного в другое (PHP 7)",
-    "homepage": "https://github.com/arhone/converting",
+    "name": "arhone/caser",
+    "description": "Преобразует одни стили написания в другие (PHP 7)",
+    "homepage": "https://github.com/arhone/caser",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "arhone\\converting\\": "source/"
+            "arhone\\caser\\": "source/"
         },
         "classmap": ["source/"]
     },
