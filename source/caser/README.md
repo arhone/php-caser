@@ -2,7 +2,7 @@
 Преобразует одни стили написания в другие
 
 ```php
-use arhone\converting\caser;
+use arhone\conversion\caser\Caser;
 
 $caser = new Caser();
 

@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace arhone\converting\caser;
+namespace arhone\conversion\caser;
 
 /**
  * Преобразователь стилей написания
  *
  * Class Caser
- * @package arhone\converting\caser
+ * @package arhone\conversion\caser
  * @author Алексей Арх <info@arh.one>
  */
 class Caser implements CaserInterface {
